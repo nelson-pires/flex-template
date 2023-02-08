@@ -1,0 +1,112 @@
+/*
+By Nelson Pires
+*/
+
+/* Za root ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+:root {
+    --site-medium-width:85%;
+    --site-large-width:75%;
+    --aside-fixed-width:340px;
+    --dark-bgr-color:#151a1e;
+    --dark-color:#d5dace;
+    --dark-a-color:#7b5;
+    --dark-a-color-hover:#fb5;
+}
+
+/* Resets ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+*, *::before, *::after { box-sizing:border-box }
+
+::-webkit-scrollbar { width:13px; height:13px }
+::-webkit-scrollbar-track { background-color:#313131 }
+::-webkit-scrollbar-thumb { background-color:#8b8b8b; border-radius:100vh }
+::-webkit-scrollbar-thumb:hover { background-color:#ababab }
+::-webkit-scrollbar-corner { background-color:transparent }
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin:0 }
+ul[role="list"], ol[role="list"] { list-style:none }
+html:focus-within { scroll-behavior:smooth }
+body { min-height:100vh; text-rendering:optimizeSpeed; line-height:1.5 }
+a:not([class]) { text-decoration-skip-ink:auto }
+img, picture { max-width:100%; display:block }
+input, button, textarea, select { font:inherit; padding:6px 8px; border:1px solid #789; border-radius:2px }
+input:focus, textarea:focus { outline-style:solid; outline-width:2px; outline-color:#789 }
+@media (prefers-reduced-motion:reduce) {
+    html:focus-within { scroll-behavior:auto }
+    *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important }
+}
+
+/* Defaults ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+html { block-size:100%; color-scheme:dark; background-color:var(--dark-bgr-color) }
+
+body { min-block-size:100%; color:var(--dark-color); font-weight:350; font-family:system-ui,-apple-system,sans-serif; font-size:1em }
+
+input::placeholder, textarea::placeholder { color:#abc }
+
+blockquote { margin:1.0em 0; padding:1.250em; color:#667; font-style:italic; line-height:1.2em; background-color:rgba(90,155,30,.3) }
+blockquote::before { content:open-quote; color:#223; font-size:1.2em }
+blockquote::after { content:close-quote; color:#223; font-size:1.2em }
+
+p { line-height:140%; margin-bottom:0.938em }
+ul, ol { margin-left:2.5em; margin-bottom:0.938em; line-height:140% }
+ul { list-style-type:square }
+
+a { color:var(--dark-a-color); text-decoration:none }
+a:hover { color:var(--dark-a-color-hover) }
+a:focus { outline:none }
+a img { border:0 }
+
+h1 { font-size:1.5em; font-weight:bold; margin-bottom:1.563em }
+h2 { font-size:1.3em; font-weight:bold; margin-bottom:0.938em }
+h3 { font-size:1.2em; font-weight:normal; margin-bottom:0.938em }
+h4 { font-size:1.1em; font-weight:normal; margin-bottom:0.938em }
+h5 { font-size:1.0em; font-weight:normal }
+h6 { font-size:0.9em; font-weight:normal }
+
+input:focus, textarea:focus, select:focus { outline:none }
+
+img, picture { filter:brightness(.8) contrast(1.2) } /* lets lower the brighness a bit for images (dark mode) */
+
+/* Custom ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+body { display:flex; flex:1; flex-direction:column; min-height:100vh }
+
+header { text-align:center; background-color:rgba(50,60,70,.5) }
+header > .headerInner { margin:0 auto; padding:20px 0; background-color:rgba(50,60,70,.7) }
+
+div.contentInner { display:flex; flex-direction:column; flex:auto; overflow:hidden; margin:0 20px } /* this must preceed the footer */
+div.contentInner.fullMain { flex-direction:initial }
+
+main { width:100%; padding:20px; text-align:center }
+
+main img, aside img { width:100%; height:100%; object-fit:cover; border-radius:10px }
+
+aside { min-width:var(--aside-fixed-width); text-align:center }
+aside section { margin:20px 0 0 0; background-color:rgba(60,70,80,.8) }
+aside section:last-child { margin-bottom:20px }
+aside section > h4 { font-weight:bold; margin:0; padding:8px 15px; background-color:rgba(90,100,110,.6) }
+aside section > div.innerBlock { padding:20px }
+aside section > div.innerBlock p:last-child { margin:0 }
+
+footer { text-align:center; background-color:rgba(50,60,70,.5) }
+footer > .footerInner { margin:0 auto; padding:20px 0; background-color:rgba(50,60,70,.7) }
+
+/* Media queries ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* min-width 850px and max-width 1139px, medium screens and tablets */
+@media screen and (min-width:53.125em) and (max-width:71.188em) {
+    header > .headerInner { width:var(--site-medium-width) }
+    div.contentInner { display:flex; flex-direction:row; justify-content:space-between; width:var(--site-medium-width); margin:0 auto }
+    footer > .footerInner { width:var(--site-medium-width) }
+    aside { background-color:rgba(50,60,70,.6) }
+}
+
+/* min-width 1140px, large screens */
+@media screen and (min-width:71.250em) {
+    header > .headerInner { width:var(--site-large-width) }
+    div.contentInner { display:flex; flex-direction:row; justify-content:space-between; width:var(--site-large-width); margin:0 auto }
+    footer > .footerInner { width:var(--site-large-width) }
+    aside { background-color:rgba(50,60,70,.6) }
+}
