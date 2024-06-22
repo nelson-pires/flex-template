@@ -2,11 +2,11 @@
 
 A flexible HTML template with a main area and aside, where the aside width is always fixed and only the main area and margins grow depending on screen size.
 
-Here's a screenshot:
+## Screenshot
 
 ![Flex template image screenshot](screenshot.png)
 
-## Main features
+## Features
 
 - Mobile first CSS
 - Highly adaptable to all screen sizes
@@ -15,8 +15,16 @@ Here's a screenshot:
 - Everything is simple and customizable
 - No JavaScript dependencies.
 
-This template was written years ago and I use a similar version on my own website.
+This template was written years ago and I find it still very usable.
 
-Free to use.
+## Links
+
+- [GitHub project](https://github.com/nelson-pires/console-x)
+- [My github profile](https://github.com/nelson-pires)
+- [My personal website](https://nelsonpires.com)
 
 ### There are no plans to actively update this template, but I may improve it if I determine its beneficial.
+
+## License
+
+This code is licensed under a MIT license.
