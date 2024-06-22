@@ -19,7 +19,7 @@ This template was written years ago and I find it still very usable.
 
 ## Links
 
-- [GitHub project](https://github.com/nelson-pires/console-x)
+- [GitHub project](https://github.com/nelson-pires/flex-template)
 - [My github profile](https://github.com/nelson-pires)
 - [My personal website](https://nelsonpires.com)
 
